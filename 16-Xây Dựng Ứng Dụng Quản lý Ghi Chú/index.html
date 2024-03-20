@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý Ghi Chú</title>
+<style>
+  #notes {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Quản lý Ghi Chú</h1>
+
+<input type="text" id="noteInput" placeholder="Nhập ghi chú...">
+<button onclick="addNote()">Thêm</button>
+
+<ul id="notes"></ul>
+
+<script>
+// Lấy dữ liệu từ localStorage
+let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+// Hiển thị danh sách ghi chú
+function displayNotes() {
+  const notesList = document.getElementById('notes');
+  notesList.innerHTML = '';
+  notes.forEach((note, index) => {
+    const li = document.createElement('li');
+    li.textContent = note;
+    // Tạo nút sửa
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Sửa';
+    editButton.onclick = () => editNote(index);
+    // Tạo nút xóa
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Xóa';
+    deleteButton.onclick = () => deleteNote(index);
+    li.appendChild(editButton);
+    li.appendChild(deleteButton);
+    notesList.appendChild(li);
+  });
+}
+
+// Thêm ghi chú mới
+function addNote() {
+  const noteInput = document.getElementById('noteInput');
+  const noteText = noteInput.value.trim();
+  if (noteText !== '') {
+    notes.push(noteText);
+    localStorage.setItem('notes', JSON.stringify(notes));
+    noteInput.value = '';
+    displayNotes();
+  }
+}
+
+// Sửa ghi chú
+function editNote(index) {
+  const newNote = prompt('Nhập nội dung mới cho ghi chú:', notes[index]);
+  if (newNote !== null) {
+    notes[index] = newNote.trim();
+    localStorage.setItem('notes', JSON.stringify(notes));
+    displayNotes();
+  }
+}
+
+// Xóa ghi chú
+function deleteNote(index) {
+  if (confirm('Bạn có chắc muốn xóa ghi chú này không?')) {
+    notes.splice(index, 1);
+    localStorage.setItem('notes', JSON.stringify(notes));
+    displayNotes();
+  }
+}
+
+// Hiển thị ghi chú khi trang được tải
+displayNotes();
+</script>
+
+</body>
+</html>

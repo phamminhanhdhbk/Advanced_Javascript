@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic Tac Toe</title>
+<style>
+  .board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+  }
+  .cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="board" id="board"></div>
+<button id="reset">Chơi lại</button>
+
+<script>
+const board = document.getElementById('board');
+const resetButton = document.getElementById('reset');
+let currentPlayer = 'X';
+let winner = null;
+const cells = [];
+
+// Tạo bảng 3x3
+for (let i = 0; i < 9; i++) {
+  const cell = document.createElement('div');
+  cell.classList.add('cell');
+  cell.dataset.index = i;
+  cell.addEventListener('click', () => {
+    if (!winner && !cells[i].textContent) {
+      cells[i].textContent = currentPlayer;
+      checkWinner();
+      togglePlayer();
+    }
+  });
+  cells.push(cell);
+  board.appendChild(cell);
+}
+
+// Hàm kiểm tra người chiến thắng
+function checkWinner() {
+  const winConditions = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // dọc
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // ngang
+    [0, 4, 8], [2, 4, 6] // chéo
+  ];
+  for (const condition of winConditions) {
+    const [a, b, c] = condition;
+    if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+      cells[a].style.color = 'green';
+      cells[b].style.color = 'green';
+      cells[c].style.color = 'green';
+      winner = currentPlayer;
+      alert(`Người chơi ${currentPlayer} chiến thắng!`);
+      break;
+    }
+  }
+  if (!winner && !cells.some(cell => !cell.textContent)) {
+    alert('Hòa!');
+  }
+}
+
+// Hàm thay đổi người chơi
+function togglePlayer() {
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+}
+
+// Sự kiện click cho nút "Chơi lại"
+resetButton.addEventListener('click', () => {
+  cells.forEach(cell => {
+    cell.textContent = '';
+    cell.style.color = 'black';
+  });
+  currentPlayer = 'X';
+  winner = null;
+});
+
+</script>
+</body>
+</html>

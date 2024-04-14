@@ -1,0 +1,9 @@
+1. Tạo một hệ thống quản lý thư viện:
+
+Xây dựng một ứng dụng JavaScript để quản lý thư viện sách.
+Chức năng bao gồm:
+Thêm, sửa, xóa sách.
+Tìm kiếm sách theo tiêu đề, tác giả, ISBN.
+Sắp xếp sách theo tiêu đề, tác giả, ngày xuất bản.
+Mượn, trả sách.
+Lưu trữ dữ liệu sách trong local storage hoặc cơ sở dữ liệu.

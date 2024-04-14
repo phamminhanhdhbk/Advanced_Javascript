@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Generator</title>
+</head>
+<body>
+    <h1>Code Generator</h1>
+    <label for="input">Enter Input:</label>
+    <textarea id="input" rows="10" cols="50"></textarea><br>
+    <label for="language">Select Language:</label>
+    <select id="language">
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+    </select><br>
+    <button onclick="generateCode()">Generate Code</button><br>
+    <label for="output">Output:</label>
+    <textarea id="output" rows="10" cols="50" readonly></textarea>
+
+    <script src="app.js"></script>
+</body>
+</html>

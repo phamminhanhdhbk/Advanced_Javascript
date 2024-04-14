@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#project-form {
+    margin-bottom: 20px;
+}
+
+.project {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.task-input {
+    margin-right: 10px;
+}
+
+.tasks {
+    list-style: none;
+    padding: 0;
+}
+
+.delete-task {
+    margin-left: 10px;
+}

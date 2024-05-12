@@ -1,0 +1,57 @@
+html
+head  
+script
+window.onload = function () {
+var chart = new CanvasJS.Chart(chartContainer, {
+	animationEnabled true,
+	zoomEnabled true,
+	theme light2,
+	title{
+		text Việc làm trong ngành nông nghiệp so với đất nông nghiệp và dân số
+	},
+	axisX {
+		titleViệc làm - Nông nghiệp,
+		suffix %,
+		minimum 0,
+		maximum 61,
+		gridThickness 1
+	},
+	axisY{
+		title Đất nông nghiệp (triệu sq. km),
+		suffix mn
+	},
+	data [{
+		type bubble,
+		toolTipContent b{name}bbrViệc làm {x}% br Đất nông nghiệp {y}mn sq. kmbr Dân số {z}mn,
+		dataPoints [
+			{ x 39.6, y 5.225, z1347, nameTrung Quốc },
+			{ x 3.3, y 4.17, z21.49, nameÚc },
+			{ x 1.5, y 4.043, z304.09, nameMỹ },
+			{ x 17.4, y 2.647, z2.64, nameBrazil },
+			{ x 8.6, y 2.154, z141.95, nameNga },
+			{ x 52.98, y 1.797, z1190.86, nameẤn Độ },
+			{ x 4.3, y 1.735, z26.16, nameẢ Rập Xê-út },
+			{ x 1.21, y 1.41, z39.71, nameArgentina },
+			{ x 5.7, y .993, z48.79, nameSA },
+			{ x 13.1, y 1.02, z110.42, nameMexico },
+			{ x 2.4, y .676, z33.31, nameCanada },
+			{ x 2.8, y .293, z64.37, namePháp },
+			{ x 3.8, y .46, z127.70, nameNhật Bản },
+			{ x 40.3, y .52, z234.95, nameIndonesia },
+			{ x 42.3, y .197, z68.26, nameThái Lan },
+			{ x 31.6, y .35, z78.12, nameAi Cập },
+			{ x 1.1, y .176, z61.39, nameVương quốc Anh },
+			{ x 3.7, y .144, z59.83, nameÝ },
+			{ x 1.8, y .169, z82.11, nameĐức }
+		]
+	}]
+});
+chart.render();
+ 
+}
+script
+head
+body
+div id=chartContainer style=height 300px; width 100%;div
+script src=httpscanvasjs.comassetsscriptcanvasjs.min.jsscript
+body

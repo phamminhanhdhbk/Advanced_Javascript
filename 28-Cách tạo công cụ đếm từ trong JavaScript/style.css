@@ -1,0 +1,29 @@
+body {
+      margin 0;
+      padding 0;
+      background-color #f0fcfc;
+    }
+    
+     {
+      font-family Arial, sans-serif;
+    }
+    
+    .container {
+      padding 100px 25%;
+      display flex;
+      flex-direction column;
+      line-height 2rem;
+      font-size 1.2rem;
+      color #202C39;
+    }
+    
+    textarea {
+      padding 20px;
+      font-size 1rem;
+      margin-bottom 40px;
+    }
+    
+    button {
+      padding 10px;
+      margin-bottom 40px;
+    } 

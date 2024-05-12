@@ -1,0 +1,60 @@
+<HTML>
+
+    <HEAD>
+    <TITLE>Tạo Menu trong IE - Sử dụng TẦNG và JavaScript</TITLE>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    </HEAD> 
+    
+    <!-- Định nghĩa lớp -->
+    <STYLE TYPE="TEXT/CSS">
+    .MenuBar{background-color:blue; color:white; font-family:arial; font-size:16pt;width:150px; cursor:hand}
+    .Menu { background-color: yellow; color: white; position: absolute; top : 40; visibility : hidden}
+    </STYLE>
+    
+    <SCRIPT language="JavaScript">
+    function AnCacMenu() // Hàm Ẩn các Menu có tác dụng làm ẩn các tầng mỗi khi được gọi
+    {
+    document.all.Menu1.style.visibility = 'hidden';
+    document.all.Menu2.style.visibility = 'hidden';
+    document.all.Menu3.style.visibility = 'hidden';
+    }
+    </SCRIPT>
+    
+    <!-- Hàm AnCacMenu () trong sự kiện onClick của BODY sẽ được gọi khi người dùng
+    Click chuột vào bất kỳ đâu trong tài liệu (Xem lại phần Nổi bọt sự kiện) -->
+    <BODY onClick = "AnCacMenu()">
+    <!-- Tạo tầng 1 chứa các liên kết của mục "Các Liên kết" -->
+    
+    <DIV CLASS="Menu" ID="Menu1" style = "left:10">
+    <a href = "https://download.com.vn/">Website tải phần mềm</a><br>
+    <a href = "https://meta.vn/">Website TMĐT</a>
+    </DIV> 
+    
+    <!-- Tạo tầng 2 chứa các liên kết của mục "Các Liên kết" -->
+    <DIV CLASS="Menu" ID="Menu2" style = "left:150;">
+    <a href = "https://quantrimang.com/">Website công nghệ</a> <br>
+    <a href = "https://vndoc.com/">Website học tập</a>
+    </DIV> 
+    
+    <!-- Tạo tầng 3 chứa các liên kết của mục "Các Liên kết" -->
+    <DIV CLASS="Menu" ID="Menu3" style = "left:250">
+    <a href = "https://www.hust.edu.vn/">Đại học Bách khoa Hà Nội</a> <br>
+    <a href = "https://tmu.edu.vn/">Đại học Thương Mại</a> <br>
+    <a href = "https://vnu.edu.vn/">Đại học Quốc gia</a>
+    </DIV>
+    
+    <span CLASS="MenuBar" onMouseMove="AnCacMenu(); document.all.Menu1.style.visibility = 'visible'">
+    Các liên kết
+    </span>
+    
+    <span CLASS="MenuBar" onMouseMove="AnCacMenu(); document.all.Menu2.style.visibility = 'visible'">
+    Tin tức
+    </span>
+    
+    <span CLASS="MenuBar" onMouseMove="AnCacMenu(); document.all.Menu3.style.visibility = 'visible'">
+    Các hoạt động
+    </span>
+    </body>
+    
+    </HTML>
+    

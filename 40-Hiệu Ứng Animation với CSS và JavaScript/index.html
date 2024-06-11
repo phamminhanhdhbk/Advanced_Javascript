@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 2000px; /* Để tạo ra đủ không gian cuộn */
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+    <script src="script.js"></script>
+</body>
+</html>

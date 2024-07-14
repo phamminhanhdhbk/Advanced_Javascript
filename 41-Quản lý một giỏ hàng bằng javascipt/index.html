@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .product, .cart-item { display: flex; justify-content: space-between; padding: 10px; border: 1px solid #ccc; margin: 5px; }
+    .cart { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+  <div id="products">
+    <div class="product">
+      <span>Product 1</span>
+      <span>$10</span>
+      <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Product 2</span>
+      <span>$20</span>
+      <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Product 3</span>
+      <span>$30</span>
+      <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2>Your Cart</h2>
+  <div id="cart"></div>
+  <div id="total"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    .slider { position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; }
+    .slides { display: flex; transition: transform 0.5s ease; }
+    .slide { min-width: 100%; }
+    .controls { margin-top: 10px; }
+    .control-button { cursor: pointer; padding: 10px 20px; background-color: #f0f0f0; border: 1px solid #ccc; }
+    .control-button.active { background-color: #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Image Slider</h1>
+
+  <div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+      <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="control-button" onclick="prevSlide()">Prev</button>
+    <button class="control-button" onclick="nextSlide()">Next</button>
+    <button class="control-button" onclick="toggleAuto()">Auto</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

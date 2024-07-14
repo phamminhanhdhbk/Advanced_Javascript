@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    .gallery { max-width: 800px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); grid-gap: 10px; }
+    .grid-item { position: relative; cursor: pointer; }
+    .grid-item img { max-width: 100%; height: auto; }
+    .full-image { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 999; }
+    .full-image img { max-width: 90%; max-height: 90%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .close-button { position: absolute; top: 10px; right: 10px; cursor: pointer; color: white; font-size: 1.5em; }
+  </style>
+</head>
+<body>
+  <h1>Image Gallery</h1>
+
+  <div class="gallery">
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="uploadImage()">Upload Image</button>
+
+    <div class="grid" id="imageGrid">
+      <!-- Images will be displayed here -->
+    </div>
+
+    <div class="full-image" id="fullImageView">
+      <span class="close-button" onclick="closeFullImage()">&times;</span>
+      <img id="fullImage" src="" alt="Full Image">
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
